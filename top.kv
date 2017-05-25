@@ -1,0 +1,985 @@
+<RootScreen>:
+	PrimeiroScreen:
+	SegundoScreen:
+	TerceiroScreen:
+	
+<PrimeiroScreen>:
+	StackLayout:
+		orientation: 'tb-lr'
+		GridLayout:
+			cols: 1
+			size_hint: (1, .3)
+			canvas.before:
+				Rectangle:
+					pos: self.pos
+					size: self.size
+					source: 'logo.png'
+			
+		GridLayout:
+			cols: 3
+			size_hint: (1, .4)
+			padding: 20, 0
+			spacing: 10, 0
+			BubbleButton:
+				text: "Criar\ntabela!"
+				font_size: '18dp'
+				bold: True
+				on_release: root.manager.current = 'dois'
+			
+			BubbleButton:
+				text: "Abrir\ntabela!"
+				font_size: '18dp'
+				bold: True
+				on_press: root.abrir()
+			BubbleButton:
+				text: "Fotos das\nmáquinas!"
+				font_size: '18dp'
+				bold: True
+				
+		
+<SegundoScreen>:
+	StackLayout:
+		orientation: 'tb-lr'
+		GridLayout:
+			cols: 1
+			size_hint: (1, .3)
+			canvas.before:
+				Rectangle:
+					pos: self.pos
+					size: self.size
+					source: 'logo.png'
+		ScrollView:
+			size_hint: (1, .6)
+			pos_hint:{'x': .0, 'y': .0}
+			GridLayout:
+				cols: 3
+				padding: 20, 100
+				spacing: 50, 50
+				size_hint: (1, 1)
+				size_hint_y: None
+				height: self.minimum_height
+				width: 500
+				Label: 
+					text: "[b]Aquecimento! [/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Aquecimento! [/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Aquecimento! [/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#-----------#
+				Label:
+					text: "[i]Máquina! [/i]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				
+				Label:
+					text: "[i]Velocidade! [/i][b] (km/h)[/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				
+				Label:
+					text: "[i]Tempo! [/i][b](min)[/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#------------------#
+				Label: 
+					text: "Esteira"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				TextInput:
+					multiline: False
+					hint_text: "Velocidade"
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.minimum_height
+					width: self.height
+					id: a0
+					
+				TextInput:
+					multiline: False
+					hint_text: "Tempo!"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: a1
+					
+				Label: 
+					text: "Bicicleta"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				TextInput:
+					multiline: False
+					hint_text: "velocidade"
+					font_size: '14dp'
+					size_hint_y: None
+					id: a2
+					
+				TextInput:
+					multiline: False
+					hint_text: "Tempo!"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: a3
+				#----------------#
+				
+				Label: 
+					text: "[b]Treino! [/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Treino! [/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Treino! [/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+			#------------------------------#
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Bíceps! [/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#----------------------------------#
+				
+				Label: 
+					text: "Puxador"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: p0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: p1
+				
+				Label: 
+					text: "Rosca direta"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: r0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: r1
+				Label: 
+					text: "Rosca invertida"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: ri0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: ri1
+				#---------------------------#
+				
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "[b]Peito![/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#------------------------------#
+				
+				Label: 
+					text: "Supino reto"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: s0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: s1
+				Label: 
+					text: "Supino inclinado"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: si0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: si1
+				Label: 
+					text: "Voador"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: v0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: v1
+				#----------#
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "[b]Perna![/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#----------#
+				Label: 
+					text: "LegPress"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: lp0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: lp1
+					
+				Label: 
+					text: "Panturrilha\nsentado"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: ps0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: ps1
+				Label: 
+					text: "Panturrilha\nem pé"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				TextInput:
+					multiline: False
+					hint_text: "N de series"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: pp0
+				TextInput:
+					multiline: False
+					hint_text: "Repeticoes"
+					font_size: '14dp'
+					size_hint_y: None
+					#height: self.texture_size[1]
+					id: pp1
+				
+				Label: 
+					text: "\n\n\n\n\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n\n\n\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n\n\n\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n\n\n\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n\n\n\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n\n\n\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+	StackLayout:
+		orientation: 'bt-rl'
+		GridLayout:
+			cols: 3
+			size_hint: (.5,.1)
+			Button:
+				text: "Salvar!"
+				font_size: '14dp'
+				on_press: root.salva()
+			Button:
+				text: "-->"
+				font_size: '14dp'
+				on_press: root.abrir()
+			Button:
+				text: "Voltar"
+				font_size: '14dp'
+				on_press: root.manager.current = 'um'
+<TerceiroScreen>:
+	StackLayout:
+		orientation: 'tb-lr'
+		GridLayout:
+			cols: 1
+			size_hint: (1, .3)
+			canvas.before:
+				Rectangle:
+					pos: self.pos
+					size: self.size
+					source: 'logo.png'
+		ScrollView:
+			size_hint: (1, .6)
+			pos_hint:{'x': .0, 'y': .0}
+			GridLayout:
+				cols: 3
+				padding: 20, 100
+				spacing: 50, 50
+				size_hint: (1, 1)
+				size_hint_y: None
+				height: self.minimum_height
+				width: 500
+				Label: 
+					text: "[b]Aquecimento! [/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Aquecimento! [/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Aquecimento! [/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#-----------#
+				Label:
+					text: "[i]Máquina![/i]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				
+				Label:
+					text: "[i]Velocidade![/i][b](km/h)[/b]" 
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				
+				Label:
+					text: "[i]Tempo![/i][b](min)[/b]"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#------------------#
+				Label: 
+					text: "Esteira"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: a0
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: a1
+					
+				Label: 
+					text: "Bicicleta"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					id: a2
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: a3
+				
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#----------------#
+				
+				Label: 
+					text: "[b]Treino! [/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Treino!v[/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Treino! [/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+			#------------------------------#
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "[b]Bíceps![/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#----------------------------------#
+				
+				Label: 
+					text: "Puxador"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: p0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: p1
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				
+				Label: 
+					text: "Rosca direta"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: r0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: r1
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "Rosca invertida"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: ri0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: ri1
+				#---------------------------#
+				
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "[b]Peito![/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				#------------------------------#
+				
+				Label: 
+					text: "Supino\n reto"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: s0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: s1
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "Supino\n inclinado"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: si0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: si1
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "Voador"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: v0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: v1
+					
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "[b]Perna![/b]\n"
+					font_size: "15dp"
+					markup: True
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]	
+				Label: 
+					text: "LegPress"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: lp0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: lp1
+				
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+						
+				Label: 
+					text: "Panturrilha\nsentado"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: ps0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: ps1
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n"
+					font_size: "20dp"
+					bold: True
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "Panturrilha\n em pé"
+					font_size: "15dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+					
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: pp0
+				Label:
+					text: ""
+					font_size: '14dp'
+					size_hint_y: None
+					height: self.texture_size[1]
+					id: pp1
+					
+				Label: 
+					text: "\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+				Label: 
+					text: "\n\n"
+					font_size: "20dp"
+					size_hint_y: None
+					height: self.texture_size[1]
+	StackLayout:
+		orientation: 'bt-rl'
+		GridLayout:
+			cols: 3
+			size_hint: (.5,.1)
+			Button:
+				text: "Salvar!"
+				font_size: '14dp'
+				#on_press: root.salva()
+			Button:
+				text: "-->"
+				font_size: '14dp'
+			
+			Button:
+				text: "Voltar"
+				font_size: '14dp'
+				on_press: root.manager.current = 'um'
